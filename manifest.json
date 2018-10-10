@@ -11,7 +11,7 @@
 	"96": "icons/96.png"
 	},
 
-  "description": "Download Sankaku Complex channel or idol images automaticly on Opera, (untested on other Chrome based browsers)",
+  "description": "Download Sankaku Complex channel or idol images automaticly on Chrome based browsers.",
 	
   "permissions": [
     "tabs", "downloads"
