@@ -6,13 +6,16 @@ function enableBrowserAction(){
 	active = true;
     chrome.browserAction.setIcon({path:"active.png"});
 	chrome.browserAction.setTitle({title: "Download enabled"})
+	
+	chrome.storage.local.set({"active": active}, function() {});
 }
 
 function disableBrowserAction(){
 	active = false;
     chrome.browserAction.setIcon({path:"inactive.png"});
-	
 	chrome.browserAction.setTitle({title: "Download disabled"})
+	
+	chrome.storage.local.set({"active": active}, function() {});
 
 }
 
@@ -33,6 +36,8 @@ chrome.runtime.onMessage.addListener(
 			var download_url =  arg.url
 			chrome.downloads.download({ url: download_url})
 		}
+		
+		
    }
 )
  

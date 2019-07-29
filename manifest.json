@@ -14,7 +14,7 @@
   "description": "Download Sankaku Complex channel or idol images automaticly on Chrome based browsers.",
 	
   "permissions": [
-    "tabs", "downloads"
+    "tabs", "downloads", "storage"
   ],
 
   "content_scripts": [

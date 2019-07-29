@@ -1,3 +1,16 @@
 iframe {
     display: none;
 }
+
+#headerlogo{
+	display: none;
+}
+
+.favorited{
+	box-shadow: 0 0 12px 8px green;
+}
+
+pan.thumb {
+    height: 170px;
+    width: 170px;
+}
