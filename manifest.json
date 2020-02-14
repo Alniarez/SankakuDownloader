@@ -19,11 +19,11 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.sankakucomplex.com/post/show/*"],
+      "matches": ["*://chan.sankakucomplex.com/post/show/*", "*://idol.sankakucomplex.com/post/show/*"],
       "js": ["post.js"]
     },
 	{
-      "matches": ["*://*.sankakucomplex.com/*"],
+      "matches": ["*://chan.sankakucomplex.com/*" , "*://idol.sankakucomplex.com/post/show/*"],
 	  "css": ["all.css"],
 	  "js": ["all.js"]
     }
