@@ -4,18 +4,18 @@ var active = true;
 // ACTION BUTTON
 function enableBrowserAction(){
 	active = true;
-    chrome.browserAction.setIcon({path:"active.png"});
-	chrome.browserAction.setTitle({title: "Download enabled"})
+    browser.browserAction.setIcon({path:"active.png"});
+	browser.browserAction.setTitle({title: "Download enabled"})
 	
-	chrome.storage.local.set({"active": active}, function() {});
+	browser.storage.local.set({"active": active}, function() {});
 }
 
 function disableBrowserAction(){
 	active = false;
-    chrome.browserAction.setIcon({path:"inactive.png"});
-	chrome.browserAction.setTitle({title: "Download disabled"})
+    browser.browserAction.setIcon({path:"inactive.png"});
+	browser.browserAction.setTitle({title: "Download disabled"})
 	
-	chrome.storage.local.set({"active": active}, function() {});
+	browser.storage.local.set({"active": active}, function() {});
 
 }
 
@@ -27,14 +27,14 @@ function updateState(){
     }
 }
 
-chrome.browserAction.onClicked.addListener(updateState);
+browser.browserAction.onClicked.addListener(updateState);
 
 // DOWNLOAD
-chrome.runtime.onMessage.addListener(
+browser.runtime.onMessage.addListener(
 	function(arg, sender, sendResponse) {
 		if(active == true){
 			var download_url =  arg.url
-			chrome.downloads.download({ url: download_url})
+			browser.downloads.download({ url: download_url})
 		}
 		
 		

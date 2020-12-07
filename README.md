@@ -1,9 +1,10 @@
 # SankakuDownloader
 
-🔞(+18 The site this pluggins is made for contains adult material)🔞
+🔞(+18 The site this pluggin is made for contains adult material)🔞
 
-This Chrome pluggin download and save to favourites any post on https://chan.sankakucomplex.com or https://idol.sankakucomplex.com.
+Download media automatically from Sankaku Complex's booru: channel and idol.
 
-Require an account on the site and logging in.
+This broswer pluggin works on https://chan.sankakucomplex.com or https://idol.sankakucomplex.com.
 
-You can turn it on and of with a button (the download, it will add to favorites anyway probalby should change it...). 
+If you are logged in the post will also be added to favorites.
+
