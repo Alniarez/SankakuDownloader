@@ -4,18 +4,18 @@ var active = true;
 // ACTION BUTTON
 function enableBrowserAction(){
 	active = true;
-    browser.browserAction.setIcon({path:"active.png"});
-	browser.browserAction.setTitle({title: "Download enabled"})
+    chrome.browserAction.setIcon({path:"active.png"});
+	chrome.browserAction.setTitle({title: "Download enabled"})
 	
-	browser.storage.local.set({"active": active}, function() {});
+	chrome.storage.local.set({"active": active}, function() {});
 }
 
 function disableBrowserAction(){
 	active = false;
-    browser.browserAction.setIcon({path:"inactive.png"});
-	browser.browserAction.setTitle({title: "Download disabled"})
+    chrome.browserAction.setIcon({path:"inactive.png"});
+	chrome.browserAction.setTitle({title: "Download disabled"})
 	
-	browser.storage.local.set({"active": active}, function() {});
+	chrome.storage.local.set({"active": active}, function() {});
 
 }
 
@@ -27,17 +27,21 @@ function updateState(){
     }
 }
 
-browser.browserAction.onClicked.addListener(updateState);
+chrome.browserAction.onClicked.addListener(updateState);
 
 // DOWNLOAD
-browser.runtime.onMessage.addListener(
+chrome.runtime.onMessage.addListener(
 	function(arg, sender, sendResponse) {
+
 		if(active == true){
 			var download_url =  arg.url
-			browser.downloads.download({ url: download_url})
-		}
-		
-		
+            if(download_url){
+                console.log("downloading: " + download_url)
+
+                chrome.downloads.download({ url: download_url})
+            }
+        }
+
    }
 )
  

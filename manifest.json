@@ -27,10 +27,5 @@
 	"background": {
 	  "scripts": ["background.js"]
 	},
-  "browser_action": {},
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "sankaku-downloader@alniarez.de"
-    }
-  }
+  "browser_action": {}
 }
